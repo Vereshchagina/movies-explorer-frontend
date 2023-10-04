@@ -9,12 +9,12 @@
 .about__title {
     max-width: 600px;
     min-height: 27px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 23px;
     font-weight: 400;
     font-size: 22px;
     line-height: 1.2;
-    letter-spacing: -4%;
+    letter-spacing: -0.88px;
 }
 
 .about__description {
@@ -30,12 +30,12 @@
 }
 
 .about__description-title {
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 26px;
     font-weight: 400;
     font-size: 20px;
     line-height: 1.21;
-    letter-spacing: -4%;
+    letter-spacing: -0.8px;
 }
 
 .about__description-content {
@@ -55,7 +55,7 @@
     align-items: center;
     justify-content: center;
     min-height: 36px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 14px;
     font-weight: 400;
     font-size: 14px;
@@ -72,7 +72,7 @@
 }
 
 .about__step-description {
-    margin: 0px;
+    margin: 0;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.21;
@@ -82,13 +82,12 @@
 
 @media screen and (max-width:768px) {
     .about {
-        max-height: 585px;
+        max-height: 585px;     
         padding: 90px 50px;
     }
 
     .about__description {
         gap: 30px;
-        max-width: 668px;
         padding: 70px 0 93px 0;
     }
 

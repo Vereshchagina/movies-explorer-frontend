@@ -9,7 +9,7 @@
 .footer__description {
     max-width: 320px;
     min-height: 16px;
-    margin: 0px;
+    margin: 0;
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 13px;
@@ -26,7 +26,7 @@
 }
 
 .footer__year {
-    margin: 0px;
+    margin: 0;
     font-weight: 400;
     font-size: 13px;
     line-height: 1.21;
@@ -72,7 +72,7 @@
     }
 
     .footer__year {
-        margin: 0px;
+        margin: 0;
         font-weight: 400;
         font-size: 13px;
         line-height: 1.21;

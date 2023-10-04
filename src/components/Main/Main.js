@@ -10,7 +10,7 @@ function Main() {
     return (
         <>
             <Header isLogged={false} />
-            <main>
+            <main className="main">
                 <Promo />
                 <AboutProject />
                 <Techs />
