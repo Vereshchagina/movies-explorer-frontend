@@ -41,6 +41,7 @@
 
 .burger-menu__nav {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 28px;
     margin-bottom: 621px;

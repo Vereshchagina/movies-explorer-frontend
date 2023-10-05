@@ -6,7 +6,7 @@ import account from "../../images/icon-main-min.svg";
 
 function BurgerMenu({ isOpen, onClose }) {
 
-    const location = useLocation;
+    const location = useLocation();
 
     return (
         <div className={`burger-menu ${isOpen ? "burger-menu_open" : ""}`}>
