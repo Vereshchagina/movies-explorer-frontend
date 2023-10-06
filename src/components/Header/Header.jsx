@@ -10,7 +10,7 @@ function Header({ isLogged }) {
             <Link className="header__logo" to="/">
                 <img src={logo} alt="Логотип" />
             </Link>
-            <Navigation isLogged={false}/>
+            <Navigation isLogged={true}/>
         </header>
     );
 };
