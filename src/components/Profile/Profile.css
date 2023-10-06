@@ -115,3 +115,46 @@
     line-height: 1.21;
     color: #EE3465;
 }
+
+@media screen and (max-width:768px) {
+    .profile {
+        padding-top: 236px;
+    }
+
+    .profile__title {
+        margin-bottom: 96px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .profile {
+        max-width: 260px;
+        padding-top: 70px;
+    }
+
+    .profile__title {
+        margin-bottom: 80px;
+    }
+    
+    .profile__submit-error {
+        margin-top: 347px;
+    }
+    
+    .profile__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profile__button-submit {
+        width: 260px;
+    }
+    
+    .profile__button-change {
+        font-size: 12px;
+    }
+    
+    .profile__logout {
+        font-size: 12px;
+    }
+}
