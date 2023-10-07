@@ -17,7 +17,7 @@ function Navigation({ isLogged }) {
         setBurgerMenuOpen(false);
     };
 
-    const location = useLocation;
+    const location = useLocation();
 
     return (
         <>

@@ -6,6 +6,10 @@
     margin: 0 auto;
 }
 
+.header__logo {
+    max-height: 38px;
+}
+
 .header_main {
     background-color: #073042;
 }

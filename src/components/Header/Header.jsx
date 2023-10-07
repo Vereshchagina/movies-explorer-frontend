@@ -8,7 +8,7 @@ function Header({ isLogged }) {
     return (
         <header className={`header ${isLogged ? "" : "header_main"}`}>
             <Link className="header__logo" to="/">
-                <img src={logo} alt="Логотип" />
+                <img className="header__image" src={logo} alt="Логотип" />
             </Link>
             <Navigation isLogged={true}/>
         </header>
