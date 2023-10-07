@@ -39,7 +39,7 @@
 .movie-card__button {
     width: 100px;
     height: 29px;
-    margin-top: 18px;
+    margin: 18px 0;
     padding: 0;
     align-self: center;
     border: none;

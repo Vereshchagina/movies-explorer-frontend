@@ -1,20 +1,19 @@
 import "./Movies.css";
 
 import Header from "../Header/Header";
-import MoviesCard from "../MoviesCard/MoviesCard";
+import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import Footer from "../Footer/Footer";
 
 function Movies() {
     return (
         <>
             <Header isLogged={true} />
-            <main>
-                <MoviesCard />
+            <main className="movies">
+                <MoviesCardList />
             </main>
+            <Footer />
         </>
-
     )
-
-
 }
 
 export default Movies;
