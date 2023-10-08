@@ -116,6 +116,7 @@
 
     .register__title {
         margin-bottom: 80px;
+        align-self: center;
     }
 
     .register__button-submit {
