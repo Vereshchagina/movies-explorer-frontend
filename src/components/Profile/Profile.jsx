@@ -17,13 +17,13 @@ function Profile() {
 
                         <div className="profile__form-field">
                             <label className="profile__form-label">Имя</label>
-                            <input className="profile__form-input" name="name" type="text" value={"Виталий"}></input>
+                            <input className="profile__form-input" name="name" type="text" value={"Виталий"} required></input>
                         </div>
                         <span className="profile__input-error">текст ошибки</span>
 
                         <div className="profile__form-field last">
                             <label className="profile__form-label">E-mail</label>
-                            <input className="profile__form-input" name="email" type="email" value={"pochta@yandex.ru"}></input>
+                            <input className="profile__form-input" name="email" type="email" value={"pochta@yandex.ru"} required></input>
                         </div>
                         <span className="profile__input-error">текст ошибки</span>
 

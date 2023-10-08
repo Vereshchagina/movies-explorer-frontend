@@ -9,7 +9,7 @@ import Portfolio from "../Portfolio/Portfolio";
 function Main() {
     return (
         <>
-            <Header isLogged={true} />
+            <Header isLogged={false} />
             <main className="main">
                 <Promo />
                 <AboutProject />

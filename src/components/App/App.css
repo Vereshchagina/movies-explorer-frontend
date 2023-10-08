@@ -21,7 +21,6 @@
   }
 }
 
-
 .link {
   transition: opacity .5s ease;
   color: #FFFFFF;
@@ -30,6 +29,10 @@
 
 .link:hover {
   opacity: 0.7;
+}
+
+.link_blue {
+  color: #4285F4;
 }
 
 .button {
