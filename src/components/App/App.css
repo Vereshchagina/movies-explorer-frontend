@@ -1,0 +1,44 @@
+.page {
+  box-sizing: border-box;
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: "Inter", Arial, sans-serif;
+  color: #FFFFFF;
+  background-color: #202020;
+}
+
+
+@media screen and (max-width: 768px) {
+  .page {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .page {
+    max-width: 320px;
+  }
+}
+
+.link {
+  transition: opacity .5s ease;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+.link_blue {
+  color: #4285F4;
+}
+
+.button {
+  transition: opacity .5s ease;
+}
+
+.button:hover {
+  opacity: 0.8;
+}

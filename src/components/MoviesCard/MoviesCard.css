@@ -1,0 +1,127 @@
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+    max-height: 319px;
+    margin: 0;
+    border-radius: 6px;
+    background-color: #222222;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08)
+}
+
+.movie-card__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin: 18px 18px;
+}
+
+.movie-card__name {
+    margin: 0;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.movie-card__duration {
+    margin: 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.38;
+    text-align: right;
+    color: #8B8B8B;
+}
+
+.movie-card__thumbnail {
+    max-width: 100%;
+    max-height: 200px;
+    margin: 0 auto;
+}
+
+.movie-card__button {
+    width: 100px;
+    height: 29px;
+    margin: 18px 0;
+    padding: 0;
+    align-self: center;
+    border: none;
+    border-radius: 30px;
+}
+
+.movie-card__button_save {
+    position: relative;
+    background-color: #313131;
+}
+
+.movie-card__button_save::before {
+    content: "Сохранить";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 0.92;
+    color: #ffffff;
+}
+
+.movie-card__button_saved {
+    background-color: #EE3465;
+    background-image: url("../../images/saved-min.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.movie-card__button_delete {
+    background-color: #313131;
+    background-image: url("../../images/delete-min.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width:768px) {
+    .movie-card {
+        max-width: 342px;
+        max-height: 309px;
+    }
+
+    .movie-card__description {
+        gap: 12px;
+    }
+
+    .movie-card__thumbnail {
+        max-height: 190px;
+    }
+
+    .movie-card__button_save {
+        position: relative;
+        background-color: #313131;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .movie-card {
+        max-width: 300px;
+        max-height: 271px;
+    }
+
+    .movie-card__description {
+        gap: 22px;
+        margin: 14px 14px;
+    }
+
+    .movie-card__name {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .movie-card__duration {
+        font-size: 10px;
+        line-height: 1.8;
+    }
+
+    .movie-card__thumbnail {
+        max-height: 168px;
+    }
+}

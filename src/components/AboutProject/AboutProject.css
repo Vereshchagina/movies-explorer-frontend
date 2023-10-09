@@ -1,0 +1,157 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    max-height: 608px;
+    background-color: #202020;
+    padding: 110px 70px;
+}
+
+.about__title {
+    max-width: 600px;
+    min-height: 27px;
+    margin-top: 0;
+    margin-bottom: 23px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -0.88px;
+}
+
+.about__description {
+    display: flex;
+    gap: 40px;
+    max-width: 1140px;
+    border-top: 1px solid #DADADA;
+    padding: 70px 0 110px 0;
+}
+
+.about__description-container {
+    max-width: 550px;
+}
+
+.about__description-title {
+    margin-top: 0;
+    margin-bottom: 26px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.21;
+    letter-spacing: -0.8px;
+}
+
+.about__description-content {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.43;
+}
+
+.about__steps {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.about__step-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.21;
+}
+
+.about__step-time_back {
+    background-color: #3DDC84;
+    color: #000000;
+}
+
+.about__step-time_front {
+    background-color: #303030;
+}
+
+.about__step-description {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.21;
+    color: #8B8B8B;
+    text-align: center;
+}
+
+@media screen and (max-width:768px) {
+    .about {
+        max-height: 585px;     
+        padding: 90px 50px;
+    }
+
+    .about__description {
+        gap: 30px;
+        padding: 70px 0 93px 0;
+    }
+
+    .about__description-container {
+        max-width: 319px;
+    }
+
+    .about__description-title {
+        margin-bottom: 22px;
+    }
+
+    .about__description-content {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .about {
+        max-height: 641px;
+        padding: 70px 18px 69px 18px;
+    }
+
+    .about__title {
+        max-width: 284px;
+        min-height: 22px;
+        margin-bottom: 28px;
+        font-size: 18px;
+        line-height: 1.21;
+    }
+
+    .about__description {
+        flex-direction: column;
+        gap: 56px;
+        min-width: 284px;
+        padding: 60px 0px 60px 0px;
+    }
+
+    .about__description-container {
+        min-width: 284px;
+    }
+
+    .about__description-title {
+        margin-bottom: 16px;
+        font-size: 18px;
+    }
+
+    .about__description-content {
+        font-size: 11px;
+        line-height: 1.46;
+    }
+
+    .about__steps {
+        grid-template-columns: 1fr 1.8fr;
+    }
+
+    .about__step-time {
+        min-height: 35px;
+        margin-bottom: 10px;
+        font-size: 11px;
+    }
+
+    .about__step-description {
+        font-weight: 400;
+        font-size: 11px;
+    }
+}
