@@ -12,7 +12,7 @@ function MoviesCard() {
                 <h2 className="movie-card__name">В погоне за Бенкси</h2>
                 <p className="movie-card__duration">0ч 42м</p>
             </div>
-            <img className="movie-card__thumbnail" src={thumbnail} alt="Постер" />
+            <img className="movie-card__thumbnail" src={thumbnail} alt="Постер фильма" />
             <button className={`movie-card__button button ${location.pathname === "/movies" ? "movie-card__button_save" : "movie-card__button_delete"}`} type="button" />
         </div>
     )

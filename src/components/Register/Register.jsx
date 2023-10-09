@@ -20,7 +20,10 @@ function Register() {
                     className="register__form-input" 
                     name="name" 
                     type="text" 
-                    value={"Виталий"} 
+                    placeholder="Введите ваше имя"
+                    value={"Виталий"}
+                    minLength={2}
+                    maxLength={30}
                     required>
                     </input>
                 </div>
@@ -31,7 +34,10 @@ function Register() {
                     className="register__form-input" 
                     name="name" 
                     type="email" 
-                    value={"pochta@yandex.ru"} 
+                    placeholder="Введите адрес электронной почты"
+                    value={"pochta@yandex.ru"}
+                    minLength={2}
+                    maxLength={30}
                     required>
                     </input>
                 </div>
@@ -42,7 +48,10 @@ function Register() {
                     className="register__form-input" 
                     name="name" 
                     type="password" 
-                    value={"••••••••••••••"} 
+                    placeholder="Введите пароль"
+                    value={"••••••••••••••"}
+                    minLength={2}
+                    maxLength={30}
                     required>
                     </input>
                     <span className="register__input-error">Что-то пошло не так...</span>

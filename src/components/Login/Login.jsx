@@ -20,7 +20,10 @@ function Login() {
                         className="login__form-input"
                         name="name"
                         type="email"
+                        placeholder="Введите адрес электронной почты"
                         value={"pochta@yandex.ru"}
+                        minLength={2}
+                        maxLength={30}
                         required>
                     </input>
                 </div>
@@ -31,7 +34,9 @@ function Login() {
                         className="login__form-input"
                         name="name"
                         type="password"
-                        value={""}
+                        placeholder="Введите пароль"
+                        minLength={2}
+                        maxLength={30}
                         required>
                     </input>
                     <span className="login__input-error">Что-то пошло не так...</span>

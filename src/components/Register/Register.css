@@ -39,6 +39,7 @@
     font-weight: 400;
     font-size: 10px;
     line-height: 1.21;
+    color: #8B8B8B;
 }
 
 .register__form-input {
@@ -53,6 +54,11 @@
     color: #ffffff;
     background-color: #202020;
     border-bottom: 1px solid #424242;
+}
+
+.register__form-input:focus {
+    border-bottom: 1px solid #3456F3;
+    outline: none;
 }
 
 .register__input-error {
