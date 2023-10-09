@@ -19,8 +19,6 @@
 }
 
 .portfolio__item {
-    display: flex;
-    justify-content: space-between;
     padding-top: 20px;
     padding-bottom: 19px;
     font-weight: 400;
@@ -28,6 +26,11 @@
     line-height: 1.67;
     letter-spacing: -1.2px;
     border-bottom: 1px solid #424242;
+}
+
+.portfolio__link {
+    display: flex;
+    justify-content: space-between;
 }
 
 .portfolio__item:last-child {

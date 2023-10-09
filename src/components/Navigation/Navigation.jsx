@@ -24,8 +24,8 @@ function Navigation({ isLogged }) {
             {isLogged ? (
                 <div className="navigation">
                     <nav className="navigation__links">
-                        <Link className={`navigation__link_reg link ${location.pathname === "/movies" ? "navigation__link_active" : ""}`} to="/movies">Фильмы</Link>
-                        <Link className={`navigation__link_reg link ${location.pathname === "/saved-movies" ? "navigation__link_active" : ""}`} to="/saved-movies">Сохраненные фильмы</Link>
+                        <Link className={`navigation__link navigation__link_reg link ${location.pathname === "/movies" ? "navigation__link_active" : ""}`} to="/movies">Фильмы</Link>
+                        <Link className={`navigation__link navigation__link_reg link ${location.pathname === "/saved-movies" ? "navigation__link_active" : ""}`} to="/saved-movies">Сохраненные фильмы</Link>
                     </nav>
                     <Link className="navigation__account-link link" to="/profile">
                         Аккаунт
@@ -35,7 +35,7 @@ function Navigation({ isLogged }) {
                 </div>
             ) : (
                 <div className="navigation">
-                    <Link className="navigation__link_unreg link" to="/signup">Регистрация</Link>
+                    <Link className="navigation__link navigation__link_unreg link" to="/signup">Регистрация</Link>
                     <Link to="/signin">
                         <button className="navigation__button button" type="button">Войти</button>
                     </Link>

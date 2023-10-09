@@ -9,7 +9,7 @@ function FilterCheckbox() {
             </label>
             <p className="checkbox__text">Короткометражки</p>
         </div>
-    );
-};
+    )
+}
 
 export default FilterCheckbox;

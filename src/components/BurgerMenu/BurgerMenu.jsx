@@ -23,7 +23,7 @@ function BurgerMenu({ isOpen, onClose }) {
                 </Link>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default BurgerMenu;
