@@ -79,7 +79,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-    baseUrl: 'http://localhost:3000',
+    baseUrl: BASE_URL,
 });
 
 export default mainApi;
