@@ -5,17 +5,16 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Footer from "../Footer/Footer";
 
 function SavedMovies() {
-    return (
-        <>
-            <Header isLogged={true} />
-            <main className="saved-movies">
-                <SearchForm />
-                <MoviesCardList />
-            </main>
-            <Footer />
-        </>
-    )
-
+  return (
+    <>
+      <Header isLogged={true} />
+      <main className="saved-movies">
+        <SearchForm />
+        <MoviesCardList />
+      </main>
+      <Footer />
+    </>
+  );
 }
 
 export default SavedMovies;

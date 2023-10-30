@@ -1,139 +1,139 @@
 .techs {
-    display: flex;
-    flex-direction: column;
-    max-height: 625px;
-    padding: 100px 70px;
-    background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  max-height: 625px;
+  padding: 100px 70px;
+  background-color: #272727;
 }
 
 .techs__title {
-    margin: 0;
-    margin-bottom: 23px;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 1.21;
-    letter-spacing: -0.88px;
+  margin: 0;
+  margin-bottom: 23px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.21;
+  letter-spacing: -0.88px;
 }
 
 .techs__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 90px;
-    border-top: 1px solid #DADADA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 90px;
+  border-top: 1px solid #DADADA;
 }
 
 .techs__subtitle {
-    margin: 0;
-    margin-bottom: 26px;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 1.16;
-    letter-spacing: -2px;
+  margin: 0;
+  margin-bottom: 26px;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1.16;
+  letter-spacing: -2px;
 }
 
 .techs__description {
-    margin: 0;
-    margin-bottom: 100px;
-    max-width: 460px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.43;
-    letter-spacing: -0.56px;
-    text-align: center;
+  margin: 0;
+  margin-bottom: 100px;
+  max-width: 460px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.56px;
+  text-align: center;
 }
 
 .techs__list {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .techs__item {
-    box-sizing: border-box;
-    min-height: 60px;
-    min-width: 90px;
-    padding: 21px 0px;
-    border-radius: 10px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.21;
-    letter-spacing: -0.56px;
-    text-align: center;
-    background-color: #303030;
+  box-sizing: border-box;
+  min-height: 60px;
+  min-width: 90px;
+  padding: 21px 0px;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: -0.56px;
+  text-align: center;
+  background-color: #303030;
 }
 
 @media screen and (max-width:768px) {
-    .techs {
-        max-height: 567px;
-        padding: 90px 50px;
-    }
+  .techs {
+    max-height: 567px;
+    padding: 90px 50px;
+  }
 
-    .techs__container {
-        padding-top: 80px;
-    }
+  .techs__container {
+    padding-top: 80px;
+  }
 
-    .techs__subtitle {
-        margin-bottom: 22px;
-    }
+  .techs__subtitle {
+    margin-bottom: 22px;
+  }
 
-    .techs__description {
-        margin-bottom: 83px;
-        font-size: 12px;
-        line-height: 1.5;
-    }
+  .techs__description {
+    margin-bottom: 83px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
 
-    .techs__item {
-        min-height: 57px;
-        min-width: 84px;
-        font-size: 12px;
-    }
+  .techs__item {
+    min-height: 57px;
+    min-width: 84px;
+    font-size: 12px;
+  }
 
 }
 
 @media screen and (max-width:690px) {
-    .techs__list {
-        flex-wrap: wrap;
-        max-width: 272px;
-    }
+  .techs__list {
+    flex-wrap: wrap;
+    max-width: 272px;
+  }
 }
 
 @media screen and (max-width:460px) {
-    .techs {
-        max-height: 651px;
-        padding: 70px 18px;
-    }
+  .techs {
+    max-height: 651px;
+    padding: 70px 18px;
+  }
 
-    .techs__title {
-        margin-bottom: 28px;
-        font-size: 18px;
-    }
+  .techs__title {
+    margin-bottom: 28px;
+    font-size: 18px;
+  }
 
-    .techs__container {
-        padding-top: 60px;
-        border-top: 1px solid #000000;
-    }
+  .techs__container {
+    padding-top: 60px;
+    border-top: 1px solid #000000;
+  }
 
-    .techs__subtitle {
-        margin-bottom: 24px;
-        font-size: 30px;
-        line-height: 1.21;
-    }
+  .techs__subtitle {
+    margin-bottom: 24px;
+    font-size: 30px;
+    line-height: 1.21;
+  }
 
-    .techs__description {
-        margin-bottom: 50px;
-        max-width: 292px;
-        font-size: 11px;
-        line-height: 1.45;
-    }
+  .techs__description {
+    margin-bottom: 50px;
+    max-width: 292px;
+    font-size: 11px;
+    line-height: 1.45;
+  }
 
-    .techs__list {
-        max-width: 178px;
-    }
+  .techs__list {
+    max-width: 178px;
+  }
 
-    .techs__item {
-        font-size: 12px;
-    }
+  .techs__item {
+    font-size: 12px;
+  }
 }

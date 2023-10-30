@@ -7,19 +7,19 @@ import AboutMe from "../AboutMe/AboutMe";
 import Portfolio from "../Portfolio/Portfolio";
 
 function Main() {
-    return (
-        <>
-            <Header isLogged={false} />
-            <main className="main">
-                <Promo />
-                <AboutProject />
-                <Techs />
-                <AboutMe />
-                <Portfolio />
-            </main>
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Header isLogged={false} />
+      <main className="main">
+        <Promo />
+        <AboutProject />
+        <Techs />
+        <AboutMe />
+        <Portfolio />
+      </main>
+      <Footer />
+    </>
+  )
 }
 
 export default Main;
