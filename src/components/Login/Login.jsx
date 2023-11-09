@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
 import "./Login.css";
 import logo from "../../images/logo-min.svg";
+import useFormValidation from "../../hooks/useFormValidation";
 
-function Login() {
+function Login({ handleAuthorization, errorMessage }) {
+  const { values, errors, isValid, handleChange, resetValidation } =
+    useFormValidation();
+
+  function handleSubmitLogin(event) {
+    event.preventDefault();
+    handleAuthorization(values.name, values.email, values.password);
+    resetValidation();
+  }
+
   return (
     <section className="login">
       <Link className="login__logo" to="/">
@@ -11,46 +21,57 @@ function Login() {
 
       <h1 className="login__title">Рады видеть!</h1>
 
-      <form className="login__form">
+      <form className="login__form" onSubmit={handleSubmitLogin}>
         <div className="login__form-field">
           <label className="login__form-label">E-mail</label>
           <input
-            className="login__form-input"
-            name="name"
+            className={`login__form-input ${
+              errors.email && "login__form-input_error"
+            }`}
+            name="email"
+            id="email"
             type="email"
             placeholder="Введите адрес электронной почты"
-            value={"pochta@yandex.ru"}
-            minLength={2}
-            maxLength={30}
+            value={values.email || ""}
             required
-          ></input>
+            onChange={handleChange}
+          />
+          <span className="login__input-error">{errors.email || ""}</span>
         </div>
 
         <div className="login__form-field">
           <label className="login__form-label">Пароль</label>
           <input
-            className="login__form-input"
-            name="name"
+            className={`login__form-input ${
+              errors.password && "login__form-input_error"
+            }`}
+            name="password"
+            id="password"
             type="password"
             placeholder="Введите пароль"
-            minLength={2}
-            maxLength={30}
+            minLength={8}
             required
-          ></input>
-          <span className="login__input-error">Что-то пошло не так...</span>
+            onChange={handleChange}
+          />
+          <span className="login__input-error">{errors.password || ""}</span>
         </div>
 
+        <span className="login__error-message">{errorMessage}</span>
+
         <button
-          className="login__button-submit button"
+          className={`login__button-submit button ${
+            !isValid && "login__button-submit_disabled"
+          }`}
           type="submit"
           aria-label="Вход в аккаунт."
+          disabled={!isValid}
         >
           Войти
         </button>
 
         <div className="login__actions">
           <p className="login__text">Еще не зарегистрированы?</p>
-          <Link className="login__register link link_blue" to="/signup">
+          <Link className="login__login link link_blue" to="/signup">
             Регистрация
           </Link>
         </div>

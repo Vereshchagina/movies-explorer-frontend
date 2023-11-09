@@ -10,8 +10,8 @@ function SearchForm({ handleSearchMovies, onChangeFilter, isShortChecked }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (pathname === "/movies" && localStorage.getItem("searchedMovies")) {
-      const search = localStorage.getItem("searchedMovies");
+    if (pathname === "/movies" && localStorage.getItem("previousSearch")) {
+      const search = localStorage.getItem("previousSearch");
       setMovieRequest(search);
     }
   }, [pathname]);
@@ -39,7 +39,7 @@ function SearchForm({ handleSearchMovies, onChangeFilter, isShortChecked }) {
             id="search-input"
             type="text"
             placeholder="Фильм"
-            value={movieRequest}
+            value={movieRequest || ""}
             onChange={onChangeRequest}
           />
           <button className="search__button button" type="submit">
