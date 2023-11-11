@@ -6,10 +6,10 @@ import Techs from "../Techs/Techs";
 import AboutMe from "../AboutMe/AboutMe";
 import Portfolio from "../Portfolio/Portfolio";
 
-function Main() {
+function Main(isLogged) {
   return (
     <>
-      <Header isLogged={false} />
+      <Header isLogged={isLogged} />
       <main className="main">
         <Promo />
         <AboutProject />

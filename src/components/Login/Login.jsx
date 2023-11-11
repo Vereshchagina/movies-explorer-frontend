@@ -9,7 +9,7 @@ function Login({ handleAuthorization, errorMessage }) {
 
   function handleSubmitLogin(event) {
     event.preventDefault();
-    handleAuthorization(values.name, values.email, values.password);
+    handleAuthorization(values);
     resetValidation();
   }
 
@@ -50,6 +50,7 @@ function Login({ handleAuthorization, errorMessage }) {
             type="password"
             placeholder="Введите пароль"
             minLength={8}
+            value={values.password || ""}
             required
             onChange={handleChange}
           />

@@ -6,11 +6,11 @@ import Navigation from "../Navigation/Navigation";
 
 function Header({ isLogged }) {
   return (
-    <header className={`header ${isLogged ? "" : "header_main"}`}>
+    <header className={`header ${!isLogged ? "" : "header_main"}`}>
       <Link className="header__logo" to="/">
         <img className="header__image" src={logo} alt="Логотип" />
       </Link>
-      <Navigation isLogged={false} />
+      <Navigation isLogged={isLogged} />
     </header>
   );
 }

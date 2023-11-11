@@ -16,10 +16,10 @@ import * as authApi from "../../utils/AuthApi";
 import mainApi from "../../utils/MainApi";
 import {
   ERROR_NOT_UNIQUE,
-  ERROR_VALIDATION,
   ERROR_REGISTRATION,
   ERROR_UNAUTHORIZED,
   ERROR_AUTH,
+  ERROR_UPDATE_INFO,
 } from "../../utils/constants";
 
 function App() {
@@ -29,9 +29,13 @@ function App() {
 
   const [isLogged, setIsLogged] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [resultText, setResultText] = useState("");
+
   const [savedMovies, setSavedMovies] = useState([]);
 
   //- Работа с данными пользователя: регистрация, авторизация, апдейт
+
+  console.log(isLogged);
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
@@ -50,15 +54,13 @@ function App() {
 
   const handleRegistration = ({ name, email, password }) => {
     authApi
-      .registration({ name, email, password })
+      .registration(name, email, password)
       .then(() => {
         handleAuthorization({ email, password });
       })
       .catch((err) => {
-        if (err.statusCode === 409) {
+        if (err === "Ошибка: 409") {
           setErrorMessage(ERROR_NOT_UNIQUE);
-        } else if (err.statusCode === 400) {
-          setErrorMessage(ERROR_VALIDATION);
         } else {
           setErrorMessage(ERROR_REGISTRATION);
         }
@@ -70,7 +72,7 @@ function App() {
 
   const handleAuthorization = ({ email, password }) => {
     authApi
-      .authorization({ email, password })
+      .authorization(email, password)
       .then((res) => {
         if (res.token) {
           setIsLogged(true);
@@ -79,7 +81,7 @@ function App() {
         }
       })
       .catch((err) => {
-        if (err.statusCode === 401) {
+        if (err === "Ошибка: 401") {
           setErrorMessage(ERROR_UNAUTHORIZED);
         } else {
           setErrorMessage(ERROR_AUTH);
@@ -90,16 +92,54 @@ function App() {
       });
   };
 
+  const handleUpdateProfile = (data) => {
+    const jwt = localStorage.getItem("jwt");
+    mainApi
+      .updateUserInfo(data, jwt)
+      .then((data) => {
+        setCurrentUser(data);
+        console.log(currentUser);
+        setResultText("Данные профиля успешно обновлены");
+      })
+      .catch((err) => {
+        if (err === "Ошибка: 409") {
+          setResultText(ERROR_NOT_UNIQUE);
+        } else {
+          setResultText(ERROR_UPDATE_INFO);
+        }
+      })
+      .finally(() => {
+        setTimeout(() => setResultText(""), 4000);
+      });
+  };
+
+  const handleSignOut = () => {
+    localStorage.clear();
+    setIsLogged(false);
+    setCurrentUser({});
+    navigate("/", { replace: true });
+  };
+
   //- Работа с фильмами: поиск, добавление, удаление
 
   return (
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/movies" element={<Movies />} />
+          <Route path="/" element={<Main isLogged={isLogged} />} />
+          <Route path="/movies" element={<Movies isLogged={isLogged} />} />
           <Route path="/saved-movies" element={<SavedMovies />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={
+              <Profile
+                isLogged={isLogged}
+                handleSignOut={handleSignOut}
+                handleUpdateProfile={handleUpdateProfile}
+                resultText={resultText}
+              />
+            }
+          />
           <Route
             path="/signin"
             element={

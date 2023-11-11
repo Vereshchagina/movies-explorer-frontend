@@ -5,10 +5,10 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Footer from "../Footer/Footer";
 import SearchForm from "../SearchForm/SearchForm";
 
-function Movies() {
+function Movies({isLogged}) {
   return (
     <>
-      <Header isLogged={true} />
+      <Header isLogged={!isLogged} />
       <main className="movies">
         <SearchForm />
         <MoviesCardList />

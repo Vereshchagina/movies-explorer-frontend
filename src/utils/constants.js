@@ -5,6 +5,7 @@ export const SEARCH_FORM_ERROR = "Нужно ввести ключевое сл�
 export const ERROR_NOT_UNIQUE = "Пользовател с таким e-mail уже зарегистрирован"
 export const ERROR_VALIDATION = "Переданы некорректные данные"
 export const ERROR_REGISTRATION = "При регистрации произошла ошибка"
+export const ERROR_UPDATE_INFO = "При обновлении данных произошла ошибка"
 export const ERROR_UNAUTHORIZED = "Неправильный email или пароль"
 export const ERROR_AUTH = "При авторизации произошла ошибка"
 

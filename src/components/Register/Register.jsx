@@ -10,7 +10,7 @@ function Register({ handleRegistration, errorMessage }) {
 
   function handleSubmitRegister(event) {
     event.preventDefault();
-    handleRegistration(values.name, values.email, values.password);
+    handleRegistration(values);
     resetValidation();
   }
 

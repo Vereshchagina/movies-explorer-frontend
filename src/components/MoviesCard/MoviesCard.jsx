@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import "./MoviesCard.css";
 import thumbnail from "../../images/film-picture-min.svg";
 
-function MoviesCard() {
+function MoviesCard(card, isSaved, handleDeleteCard, handleSaveCard) {
   const location = useLocation();
 
   return (
