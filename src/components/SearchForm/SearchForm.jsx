@@ -10,8 +10,8 @@ function SearchForm({ handleSearchMovies, onChangeFilter, isShortChecked }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (pathname === "/movies" && localStorage.getItem("previousSearch")) {
-      const search = localStorage.getItem("previousSearch");
+    if (pathname === "/movies" && localStorage.getItem("movieSearch")) {
+      const search = localStorage.getItem("movieSearch");
       setMovieRequest(search);
     }
   }, [pathname]);
@@ -51,7 +51,7 @@ function SearchForm({ handleSearchMovies, onChangeFilter, isShortChecked }) {
 
       <FilterCheckbox
         onChangeFilter={onChangeFilter}
-        isCheckedShort={isShortChecked}
+        isShortChecked={isShortChecked}
       />
     </section>
   );

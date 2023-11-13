@@ -4,14 +4,10 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 function MoviesCardList() {
   return (
     <section className="movies-list">
-      <div className="movies-list__cards">
+      <ul className="movies-list__cards">
         <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-      </div>
+
+      </ul>
       <button className="movies-list__more-btn" aria-label="Показать еще">
         Еще
       </button>
