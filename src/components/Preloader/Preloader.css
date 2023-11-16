@@ -89,3 +89,7 @@
   background: #EE3465;
   animation: preloader-inside-red 1s ease-in-out infinite;
 }
+
+.preloader_visible {
+  display: flex;
+}

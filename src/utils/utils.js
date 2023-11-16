@@ -3,3 +3,7 @@ export function convertMovieDuration(duration) {
   const minutes = duration % 60;
   return hours ? `${hours}ч ${minutes}м` : `${minutes}м`;
 }
+
+export function handleFilterByDuration(movies) {
+  return movies.filter((movie) => movie.duration <= 40);
+}

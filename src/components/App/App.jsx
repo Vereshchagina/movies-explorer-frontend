@@ -20,6 +20,7 @@ import {
   ERROR_UNAUTHORIZED,
   ERROR_AUTH,
   ERROR_UPDATE_INFO,
+  ERROR_BAD_REQUEST,
 } from "../../utils/constants";
 
 function App() {
@@ -36,6 +37,13 @@ function App() {
   //- Работа с данными пользователя: регистрация, авторизация, апдейт
 
   console.log(isLogged);
+
+  useEffect(() => {
+    const loggedState = localStorage.getItem("isLogged");
+    if (loggedState === "true") {
+      setIsLogged(true);
+    }
+  }, []);
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
@@ -76,12 +84,15 @@ function App() {
       .then((res) => {
         if (res.token) {
           setIsLogged(true);
+          localStorage.setItem("isLogged", isLogged);
           localStorage.setItem("jwt", res.token);
           navigate("/movies", { replace: true });
         }
       })
       .catch((err) => {
-        if (err === "Ошибка: 401") {
+        if (err === "Ошибка: 400") {
+          setErrorMessage(ERROR_BAD_REQUEST);
+        } else if (err === "Ошибка: 401") {
           setErrorMessage(ERROR_UNAUTHORIZED);
         } else {
           setErrorMessage(ERROR_AUTH);
@@ -98,7 +109,6 @@ function App() {
       .updateUserInfo(data, jwt)
       .then((data) => {
         setCurrentUser(data);
-        console.log(currentUser);
         setResultText("Данные профиля успешно обновлены");
       })
       .catch((err) => {

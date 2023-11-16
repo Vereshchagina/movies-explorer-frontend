@@ -4,17 +4,17 @@ import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import "./SearchForm.css";
 import { SEARCH_FORM_ERROR } from "../../utils/constants";
 
-function SearchForm({ handleSearchMovies, onChangeFilter, isShortChecked }) {
+function SearchForm({ handleSearchMovies, handleSwitchFilter, isShortChecked }) {
   const [errorMessage, setErrorMessage] = useState("");
   const [movieRequest, setMovieRequest] = useState("");
-  const { pathname } = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
-    if (pathname === "/movies" && localStorage.getItem("movieSearch")) {
+    if (location.pathname === "/movies" && localStorage.getItem("movieSearch")) {
       const search = localStorage.getItem("movieSearch");
       setMovieRequest(search);
     }
-  }, [pathname]);
+  }, [location]);
 
   function onChangeRequest(event) {
     setMovieRequest(event.target.value);
@@ -50,7 +50,7 @@ function SearchForm({ handleSearchMovies, onChangeFilter, isShortChecked }) {
       </form>
 
       <FilterCheckbox
-        onChangeFilter={onChangeFilter}
+        onChangeFilter={handleSwitchFilter}
         isShortChecked={isShortChecked}
       />
     </section>

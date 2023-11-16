@@ -8,13 +8,13 @@ import BurgerMenu from "../BurgerMenu/BurgerMenu";
 function Navigation({ isLogged }) {
   const [isBurgerMenuOpen, setBurgerMenuOpen] = useState(false);
 
-  const openMenu = () => {
+  function openMenu() {
     setBurgerMenuOpen(true);
-  };
+  }
 
-  const closeMenu = () => {
+  function closeMenu() {
     setBurgerMenuOpen(false);
-  };
+  }
 
   const location = useLocation();
 
