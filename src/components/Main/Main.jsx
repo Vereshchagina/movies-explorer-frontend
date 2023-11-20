@@ -6,7 +6,7 @@ import Techs from "../Techs/Techs";
 import AboutMe from "../AboutMe/AboutMe";
 import Portfolio from "../Portfolio/Portfolio";
 
-function Main(isLogged) {
+function Main({ isLogged }) {
   return (
     <>
       <Header isLogged={isLogged} />
@@ -19,7 +19,7 @@ function Main(isLogged) {
       </main>
       <Footer />
     </>
-  )
+  );
 }
 
 export default Main;

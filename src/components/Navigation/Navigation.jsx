@@ -20,7 +20,7 @@ function Navigation({ isLogged }) {
 
   return (
     <>
-      {!isLogged ? (
+      {isLogged === true ? (
         <div className="navigation">
           <nav className="navigation__links">
             <Link

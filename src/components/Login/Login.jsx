@@ -3,7 +3,7 @@ import "./Login.css";
 import logo from "../../images/logo-min.svg";
 import useFormValidation from "../../hooks/useFormValidation";
 
-function Login({ handleAuthorization, errorMessage }) {
+function Login({ handleAuthorization, errorMessage, isSubmitting }) {
   const { values, errors, isValid, handleChange, resetValidation } =
     useFormValidation();
 
@@ -35,6 +35,7 @@ function Login({ handleAuthorization, errorMessage }) {
             value={values.email || ""}
             required
             onChange={handleChange}
+            disabled={isSubmitting}
           />
           <span className="login__input-error">{errors.email || ""}</span>
         </div>
@@ -53,6 +54,7 @@ function Login({ handleAuthorization, errorMessage }) {
             value={values.password || ""}
             required
             onChange={handleChange}
+            disabled={isSubmitting}
           />
           <span className="login__input-error">{errors.password || ""}</span>
         </div>

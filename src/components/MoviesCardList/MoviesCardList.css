@@ -20,6 +20,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
+  padding: 0px;
 }
 
 .movies-list__more-btn {
@@ -36,7 +37,11 @@
   background-color: #2F2F2F;
 }
 
-@media screen and (max-width:768px) {
+.movies-list__more-btn_hidden {
+  visibility: hidden;
+}
+
+@media screen and (max-width:1110px) {
   .movies-list__cards {
     grid-template-columns: 1fr 1fr;
     grid-gap: 35px 24px;
@@ -47,7 +52,7 @@
   }
 }
 
-@media screen and (max-width:450px) {
+@media screen and (max-width:690px) {
   .movies-list__cards {
     grid-template-columns: 1fr;
     gap: 16px;

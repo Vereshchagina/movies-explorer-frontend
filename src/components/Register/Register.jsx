@@ -4,7 +4,7 @@ import logo from "../../images/logo-min.svg";
 import useFormValidation from "../../hooks/useFormValidation";
 import { NAME_REGEX, EMAIL_REGEX } from "../../utils/constants";
 
-function Register({ handleRegistration, errorMessage }) {
+function Register({ handleRegistration, errorMessage, isSubmitting }) {
   const { values, errors, isValid, handleChange, resetValidation } =
     useFormValidation();
 
@@ -39,6 +39,7 @@ function Register({ handleRegistration, errorMessage }) {
             required
             pattern={NAME_REGEX}
             onChange={handleChange}
+            disabled={isSubmitting}
           />
           <span className="register__input-error">{errors.name || ""}</span>
         </div>
@@ -57,6 +58,7 @@ function Register({ handleRegistration, errorMessage }) {
             required
             pattern={EMAIL_REGEX}
             onChange={handleChange}
+            disabled={isSubmitting}
           />
           <span className="register__input-error">{errors.email || ""}</span>
         </div>
@@ -75,6 +77,7 @@ function Register({ handleRegistration, errorMessage }) {
             minLength={8}
             required
             onChange={handleChange}
+            disabled={isSubmitting}
           />
           <span className="register__input-error">{errors.password || ""}</span>
         </div>

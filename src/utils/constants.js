@@ -13,9 +13,8 @@ export const ERROR_BAD_REQUEST = "При авторизации произошл
 export const NAME_REGEX = "[A-za-zА-Яа-яЁё\\-\\s]+"
 export const EMAIL_REGEX = "^[^ ]+@[^ ]+\\.[a-z]{2,3}$"
 
-export const LARGE_SCREEN = 1280
-export const MEDIUM_SCREEN = 768
-export const SMALL_SCREEN = 480
+export const LARGE_SCREEN = 1100
+export const MEDIUM_SCREEN = 690
 
 export const INITIAL_MOVIES_LARGE = 12
 export const INITIAL_MOVIES_MEDIUM = 8

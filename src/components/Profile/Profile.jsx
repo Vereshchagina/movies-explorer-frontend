@@ -6,7 +6,13 @@ import { useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { NAME_REGEX, EMAIL_REGEX } from "../../utils/constants";
 
-function Profile({ isLogged, handleSignOut, handleUpdateProfile, resultText }) {
+function Profile({
+  isLogged,
+  handleSignOut,
+  handleUpdateProfile,
+  resultText,
+  isSubmitted,
+}) {
   const { values, errors, isValid, setValues, handleChange } =
     useFormValidation();
   const currentUser = useContext(CurrentUserContext);
@@ -29,7 +35,7 @@ function Profile({ isLogged, handleSignOut, handleUpdateProfile, resultText }) {
 
   return (
     <>
-      <Header isLogged={!isLogged} />
+      <Header isLogged={isLogged} />
 
       <main className="main">
         <section className="profile">
@@ -91,6 +97,12 @@ function Profile({ isLogged, handleSignOut, handleUpdateProfile, resultText }) {
                   }`}
                   type="submit"
                   aria-label="Сохранить изменения."
+                  disabled={
+                    !isValid ||
+                    isSubmitted ||
+                    (currentUser.name === values.name &&
+                      currentUser.email === values.email)
+                  }
                 >
                   Coxранить
                 </button>

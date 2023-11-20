@@ -51,6 +51,7 @@ class MainApi {
     return fetch(this._baseUrl + '/movies', {
       method: "POST",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
         "Authorization": `Bearer ${token}`
       },
@@ -64,8 +65,8 @@ class MainApi {
         trailerLink: data.trailerLink,
         thumbnail: MOVIES_URL + data.image.formats.thumbnail.url,
         movieId: data.id,
-        nameRu: data.nameRU,
-        nameEN: data.nameEn
+        nameRU: data.nameRU,
+        nameEN: data.nameEN
       }),
     }).then(this._handleResponseValidation);
   }

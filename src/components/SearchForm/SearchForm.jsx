@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import "./SearchForm.css";
+import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import { SEARCH_FORM_ERROR } from "../../utils/constants";
 
-function SearchForm({ handleSearchMovies, handleSwitchFilter, isShortChecked }) {
+function SearchForm({
+  handleSearchMovies,
+  handleSwitchFilter,
+  isShortChecked,
+  searchQuery,
+}) {
   const [errorMessage, setErrorMessage] = useState("");
   const [movieRequest, setMovieRequest] = useState("");
-  const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === "/movies" && localStorage.getItem("movieSearch")) {
-      const search = localStorage.getItem("movieSearch");
-      setMovieRequest(search);
-    }
-  }, [location]);
+    setMovieRequest(searchQuery);
+  }, [searchQuery]);
 
   function onChangeRequest(event) {
     setMovieRequest(event.target.value);

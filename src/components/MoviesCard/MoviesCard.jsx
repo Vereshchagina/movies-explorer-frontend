@@ -3,15 +3,15 @@ import "./MoviesCard.css";
 import { convertMovieDuration } from "../../utils/utils";
 import { MOVIES_URL } from "../../utils/constants";
 
-function MoviesCard(movie, isSaved, handleDeleteMovie, handleSaveMovie) {
+function MoviesCard({ movie, isSaved, handleDeleteMovie, handleSaveMovie }) {
   const location = useLocation();
 
   function handleOpenTrailer() {
     window.open(movie.trailerLink, "_blank");
   }
 
-  function handleMovieActions() {
-    isSaved ? handleDeleteMovie(movie) : handleSaveMovie(movie);
+  function onClickSave() {
+    handleSaveMovie(movie);
   }
 
   function onClickDelete() {
@@ -26,31 +26,39 @@ function MoviesCard(movie, isSaved, handleDeleteMovie, handleSaveMovie) {
           {convertMovieDuration(movie.duration)}
         </p>
       </div>
+
       <img
         className="movie-card__thumbnail"
-        src={`${MOVIES_URL}${movie.image.url}`}
+        src={
+          location.pathname === "/movies"
+            ? `${MOVIES_URL}${movie.image.url}`
+            : movie.thumbnail
+        }
         alt={movie.nameRU}
         onClick={handleOpenTrailer}
       />
-      <button
-        className={`movie-card__button button ${
-          location.pathname === "/movies"
-            ? isSaved
-              ? "movie-card__button_saved"
-              : "movie-card__button_save"
-            : ""
-        } ${
-          location.pathname === "/saved-movies"
-            ? "movie-card__button_delete"
-            : ""
-        }`}
-        onClick={
-          location.pathname === "/saved-movies"
-            ? onClickDelete
-            : handleMovieActions
-        }
-        type="button"
-      />
+
+      {location.pathname === "/movies" ? (
+        isSaved(movie) ? (
+          <button
+            type="button"
+            className="movie-card__button button movie-card__button_saved"
+            onClick={onClickDelete}
+          />
+        ) : (
+          <button
+            type="button"
+            className="movie-card__button button movie-card__button_save"
+            onClick={onClickSave}
+          />
+        )
+      ) : (
+        <button
+          type="button"
+          className="movie-card__button button movie-card__button_delete"
+          onClick={onClickDelete}
+        />
+      )}
     </li>
   );
 }

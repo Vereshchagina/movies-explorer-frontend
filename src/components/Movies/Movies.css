@@ -2,13 +2,13 @@
   padding: 70px 70px 80px 70px;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1110px) {
   .movies {
     padding: 70px 30px 80px 30px;
   }
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width:690px) {
   .movies {
     padding: 40px 10px 80px 10px;
   }
