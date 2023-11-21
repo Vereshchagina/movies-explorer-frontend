@@ -1,48 +1,135 @@
 import { Link } from "react-router-dom";
 import "./Profile.css";
 import Header from "../Header/Header";
+import useFormValidation from "../../hooks/useFormValidation";
+import { useContext, useEffect, useState } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { NAME_REGEX, EMAIL_REGEX } from "../../utils/constants";
 
-function Profile() {
-    return (
-        <>
-            <Header isLogged={true} />
+function Profile({
+  isLogged,
+  handleSignOut,
+  handleUpdateProfile,
+  resultText,
+  isSubmitted,
+}) {
+  const { values, errors, isValid, setValues, handleChange } =
+    useFormValidation();
+  const currentUser = useContext(CurrentUserContext);
+  const [isSaveButton, setIsSaveButton] = useState(false);
 
-            <main className="main">
+  function handleSubmitUpdate(event) {
+    event.preventDefault();
+    handleUpdateProfile(values);
+    setIsSaveButton(false);
+  }
 
-                <section className="profile">
+  function toggleSaveButton(event) {
+    event.preventDefault();
+    setIsSaveButton(true);
+  }
 
-                    <h1 className="profile__title">Привет, Виталий</h1>
+  useEffect(() => {
+    setValues(currentUser);
+  }, [currentUser, setValues]);
 
-                    <form className="profile__form" name="profile">
+  return (
+    <>
+      <Header isLogged={isLogged} />
 
-                        <div className="profile__form-field">
-                            <label className="profile__form-label">Имя</label>
-                            <input className="profile__form-input" name="name" type="text" value={"Виталий"} required></input>
-                        </div>
-                        <span className="profile__input-error">текст ошибки</span>
+      <main className="main">
+        <section className="profile">
+          <h1 className="profile__title">Привет, {currentUser.name}!</h1>
 
-                        <div className="profile__form-field last">
-                            <label className="profile__form-label">E-mail</label>
-                            <input className="profile__form-input" name="email" type="email" value={"pochta@yandex.ru"} required></input>
-                        </div>
-                        <span className="profile__input-error">текст ошибки</span>
+          <form
+            className="profile__form"
+            name="profile"
+            onSubmit={handleSubmitUpdate}
+          >
+            <div className="profile__form-field">
+              <label className="profile__form-label">Имя</label>
+              <input
+                className={`profile__form-input ${
+                  errors.name && "profile__form-input_error"
+                }`}
+                name="name"
+                id="name"
+                type="text"
+                value={values.name || currentUser.name}
+                minLength={2}
+                maxLength={30}
+                required
+                pattern={NAME_REGEX}
+                onChange={handleChange}
+                disabled={!isSaveButton}
+              />
+            </div>
+            <span className="profile__input-error">{errors.name}</span>
 
-                        <p className="profile__submit-error"></p>
+            <div className="profile__form-field last">
+              <label className="profile__form-label">E-mail</label>
+              <input
+                className={`profile__form-input ${
+                  errors.email && "profile__form-input_error"
+                }`}
+                name="email"
+                id="email"
+                type="email"
+                value={values.email || currentUser.email}
+                required
+                pattern={EMAIL_REGEX}
+                onChange={handleChange}
+                disabled={!isSaveButton}
+              />
+            </div>
+            <span className="profile__input-error">{errors.email}</span>
 
-                        <div className="profile__actions">
-                            <button className="profile__button-submit button" type="submit" aria-label="Сохранить изменения.">Coxранить</button>
-                            <button className="profile__button-change button" type="button" aria-label="Редактировать профиль.">Редактировать</button>
-                            <Link className="profile__logout link" to="/signin">Выйти из аккаунта</Link>
-                        </div>
+            <p className="profile__submit-error">{resultText}</p>
 
-                    </form>
+            <div className="profile__actions">
+              {isSaveButton ? (
+                <button
+                  className={`profile__button-submit button ${
+                    (!isValid ||
+                      (currentUser.name === values.name &&
+                        currentUser.email === values.email)) &&
+                    "profile__button-submit_disabled"
+                  }`}
+                  type="submit"
+                  aria-label="Сохранить изменения."
+                  disabled={
+                    !isValid ||
+                    isSubmitted ||
+                    (currentUser.name === values.name &&
+                      currentUser.email === values.email)
+                  }
+                >
+                  Coxранить
+                </button>
+              ) : (
+                <button
+                  className="profile__button-change button"
+                  type="button"
+                  aria-label="Редактировать профиль."
+                  onClick={toggleSaveButton}
+                >
+                  Редактировать
+                </button>
+              )}
 
-                </section>
-
-            </main>
-
-        </>
-    )
+              <Link
+                className="profile__logout link"
+                to="/"
+                onClick={handleSignOut}
+              >
+                Выйти из аккаунта
+              </Link>
+            </div>
+          </form>
+        </section>
+      </main>
+    </>
+  );
 }
 
 export default Profile;

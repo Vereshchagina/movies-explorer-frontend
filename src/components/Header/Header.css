@@ -1,27 +1,27 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    max-height: 74px;
-    padding: 18px 70px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  max-height: 74px;
+  padding: 18px 70px;
+  margin: 0 auto;
 }
 
 .header__logo {
-    max-height: 38px;
+  max-height: 38px;
 }
 
 .header_main {
-    background-color: #073042;
+  background-color: #073042;
 }
 
-@media screen and (max-width:768px) {
-    .header {
-        padding: 18px 30px;
-    }
+@media screen and (max-width:1110px) {
+  .header {
+    padding: 18px 30px;
+  }
 }
 
-@media screen and (max-width:320px) {
-    .header {
-        padding: 18px 14px;
-    }
+@media screen and (max-width:690px) {
+  .header {
+    padding: 18px 14px;
+  }
 }
