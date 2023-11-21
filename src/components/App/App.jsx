@@ -47,6 +47,7 @@ function App() {
     useState(shownSavedMovies);
   const [moviesToRender, setMoviesToRender] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuerySaved, setSearchQuerySaved] = useState("");
   const [isShortChecked, setIsShortChecked] = useState(false);
   const [isShortCheckedSaved, setIsShortCheckedSaved] = useState(false);
 
@@ -326,6 +327,7 @@ function App() {
   };
 
   const handleSearchInSavedMovies = (request) => {
+    setSearchQuerySaved(request);
     const resultOfSearchSaved = handleSearchInBase(savedMovies, request, false);
     if (resultOfSearchSaved.length === 0) {
       setIsNotFound(true);
@@ -339,6 +341,11 @@ function App() {
       );
     }
   };
+
+  useEffect(() => {
+    handleSearchInSavedMovies(searchQuerySaved);
+    // eslint-disable-next-line
+  },[savedMovies])
 
   return (
     <>
