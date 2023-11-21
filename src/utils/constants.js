@@ -22,5 +22,5 @@ export const INITIAL_MOVIES_SMALL = 5
 
 export const ADDED_MOVIES_LARGE = 3
 export const ADDED_MOVIES_MEDIUM = 2
-export const ADDED_MOVIES_SMALL = 1
+export const ADDED_MOVIES_SMALL = 2
 
